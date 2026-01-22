@@ -1,0 +1,673 @@
+
+body{
+ margin: 0; padding: 0;
+}
+.h1{
+    height: 100px;width: 100%;background-color: aqua ;margin-top: 150px;
+}
+.menu{
+    height: 115px;width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: rgba(222, 221, 221, 0.4);
+    backdrop-filter:blur(10px)
+}
+
+.logo{
+    height: 100%;width: 20%; ;float: left;
+}
+
+.logo img{
+    height: 70%;margin-left: 50px;margin-top: 20px;
+}
+
+
+
+.navigation{
+    float: left; width: 75%; height: 115px;
+    display: flex; 
+    align-items: center;
+    margin-left: 40px;
+}
+
+
+
+.navigation ul {
+    list-style: none;margin: 0;padding: 0;
+}
+
+
+
+.navigation ul li {
+
+    display: inline-block;margin-right: 60px;
+    margin-right: 18px; /* Reduced from 80px to make room for dots */
+    position: relative; /* Needed to anchor the dot */
+
+}
+.navigation ul li:not(:last-child)::after {
+    content: "•";            /* The dot symbol */
+    position: absolute;
+    right: -18px;            /* Position it in the middle of the gap */
+    color: #313030;             /* Muted grey to match the luxury theme */
+    font-size: 20px;
+    top: 50%;                /* Center vertically */
+    transform: translateY(-50%);
+    pointer-events: none;    /* Ensures dot isn't clickable */
+}
+
+
+
+
+
+.navigation ul li a {
+
+    text-decoration: none;color: black;font-weight: bold;font-size: 19px;
+
+}
+.booknow{
+    height: 50px;width: 150px;background-color: red;
+    font-size: 20px;
+    color: white;
+    border: none;
+    margin-left: 300px;
+}
+
+.navigation ul li {
+    position: relative;
+    display: inline-block;
+}
+
+/* 2. Hide the dropdown by default */
+.dropdown {
+    display: none; 
+    position: absolute;
+    top: 100%;       /* Sits exactly below the parent link */
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* 3. Style the links inside the dropdown */
+.dropdown li {
+    width: 100%;     /* Make links stack vertically */
+    margin: 0 !important;
+}
+
+.dropdown li a {
+    color: #333 !important;
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    text-align: left;
+}
+
+/* 4. The Hover Logic: Show dropdown when parent LI is hovered */
+.navigation ul li:hover .dropdown {
+    display: block;
+}
+
+/* 5. Hover effect for the dropdown items */
+.dropdown li a:hover {
+    background-color: #f1f1f1;
+    color: #c5a059 !important; /* The gold theme color */
+}
+
+
+@media screen and (max-width: 768px) {
+    
+
+    .menu {
+        height: 80px;        
+    }
+
+    .logo img {
+        height: 50%;        
+        margin-left: 20px;
+        margin-top: 15px;
+    }
+
+   
+    .navigation {
+        display: none; 
+    }
+    
+   
+}
+.slider{
+    margin-top: 115px; 
+    float: left;
+    height: 750px;width: 100%;float: left;
+    background-image:url(images/roomslider1.jpg);
+    background-size: 100% 100%;
+    animation-name: ani;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes ani{
+    0%{  background-image:url(images/Sliderimg2.jpg)}
+    25%{  background-image:url(images/Sliderimg3.jpg);}
+    50%{  background-image:url(images/roomslider4.jpg);}
+    75%{  background-image:url(images/roomslider2.jpg);}
+    100%{  background-image:url(images/roomslider3.jpg);}
+
+}
+
+.slider_filter{
+    height: 150px;width: 90%;float: left;
+    background-color: white;margin-left: 5%;
+    position: absolute;
+    top: 700px;
+    border: 10px solid rgba(210,211,197,0.5) ;
+    box-sizing: border-box;
+    
+}
+
+.filter_box{
+    height: 100%;width: 22.5%;float: left;
+    margin-left: 2%;
+    margin-top: 20px;
+} 
+
+.filter_box select{
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+}
+.filter_box input{
+    margin-top: 10px;
+    width: 48%;
+    float: left;
+    height: 40px;
+}
+.date_row{
+    display: flex;
+    margin-top: 10px;
+    clear: left;
+}
+
+.date_row input{
+    width: 50%;
+    height: 40px;
+}
+.filter_box .inp{
+    clear:left;
+    margin-right: 30px;
+
+}
+.filter_box button{
+    height: 40px;
+    width: 80px;
+    float: left;
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+}
+.filter_box lable{
+    margin-top:5px;
+    float: left ;
+}
+
+
+
+@media screen and (max-width: 667px) {
+   
+    .slider_filter {
+        position: relative; 
+        top: 0px ;   
+        margin: 400px 5%;     
+        height: auto;       
+        border: 5px solid rgba(210,211,197,0.5); 
+    }
+
+    
+    .filter_box {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 20px;
+        float: none;        
+    }
+
+    
+    .about_area {
+        margin-top: 50px;    
+        padding-top: 20px;
+    }
+}
+.about_area{
+
+    clear: both;
+    
+    padding: 2.5% 10%;
+    height: auto;width: 75%;
+}
+
+.area_heading{
+    font-size: 45px;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    color: rgb(114, 110, 110);
+   
+
+}
+.area_discription{
+    font-size: 24.5px;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: rgb(145, 135, 135);
+}
+.location{
+    font-size: 24.5px;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: rgb(109, 99, 99);
+
+}
+
+
+@media screen and (max-width: 667px) {
+    
+    .about_area {
+        width: 90%;          
+        height: auto;        
+        padding: 40px 5%;   
+        text-align: center;  
+    }
+
+    .area_heading {
+        font-size: 28px;     
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .area_discription {
+        font-size: 16px;    
+        text-align: justify; 
+    }
+}
+/* Container for the image + box */
+
+.roomsection {
+    display: flex;         /* Activates horizontal alignment */
+    flex-wrap: wrap;     /* Prevents them from dropping to a new line */
+    justify-content: center; 
+    gap: 20px;             /* Space between the rooms */
+    width: 100%;
+    margin-top: 50px;
+}
+.room-container {
+    width: 30%; /* Matches your eachroom width */
+    margin-bottom: 100px; /* Extra space because the box will hang off the bottom */
+    
+}
+
+/* Ensure the image stays inside its bounds */
+.eachroom {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+/* The Overlapping Description Box */
+.room-info-overlay {
+    background-color: #1a1a1a; /* Dark nearly-black background */
+    width: 85%;                /* Slightly narrower than the image */
+    margin: -60px auto 0 auto; /* Negative top margin pulls it UP over the image */
+    padding: 30px 20px;
+    position: relative;        /* Keeps it on top of the image */
+    z-index: 10;
+    text-align: center;        /* Centers all text inside */
+    color: white;
+    border-top: 4px solid #c5a059; /* The Gold bar seen in your image */
+    box-sizing: border-box;
+}
+
+.room-info-overlay h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+}
+
+.room-info-overlay p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #b3b3b3;
+}
+.eachroom img {
+    width: 100%; /* Forces image to fit the 30% width of the container */
+    height: 100%;
+    object-fit: cover; /* Prevents stretching while filling the box */
+}
+
+@media screen and (max-width: 768px) {
+    /* 1. Allow rooms to take full width and stack */
+    .room-container {
+        width: 90%;          /* Take up most of the phone width */
+        max-width: 450px;    /* Don't let it get too wide on tablets */
+        margin-bottom: 80px; /* Space for the overlapping box */
+    }
+
+    /* 2. Adjust the image height for better mobile viewing */
+    .eachroom {
+        height: 250px;       /* Slightly shorter for mobile screens */
+    }
+
+    /* 3. Scale the text box for better readability */
+    .room-info-overlay {
+        width: 95%;          /* Wider overlay for better text fitting */
+        margin-top: -40px;   /* Slightly less overlap to show more photo */
+        padding: 20px 15px;  /* Tighter padding */
+    }
+
+    .room-info-overlay h3 {
+        font-size: 20px;     /* Shrink title slightly */
+    }
+
+    .room-info-overlay p {
+        font-size: 13px;     /* Small but readable text */
+    }
+}
+.contact{
+    clear: both;
+    
+    height: 350px;
+    width: 100%;
+    
+    box-sizing: border-box;
+    padding: 2.5% 15%;
+    float: left;
+
+}
+.contactheading{
+     font-size: 50px;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    color: rgb(114, 110, 110);
+
+}
+.contactdiv{
+    width: 100%;
+    display: flex; 
+    justify-content: space-around;
+    align-items: flex-start;
+    
+
+}
+.contactdiv i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    display: block;
+}
+.contactdiv p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0;
+}
+
+@media screen and (max-width: 667px) {
+    
+
+    .contact {
+        height: auto;           
+        padding: 40px 5%;      
+        text-align: center;
+    }
+
+    .contactheading {
+        font-size: 32px;        
+        margin-bottom: 30px;
+    }
+
+    .contactdiv {
+        flex-direction: column; 
+        align-items: center;    
+        gap: 40px;              
+    }
+
+    .contactdiv div {           
+        width: 100% !important; 
+        margin-bottom: 20px;
+    }
+
+    .contactdiv p {
+        font-size: 18px;       
+        line-height: 1.6;
+    }
+
+    .contactdiv i {
+        font-size: 30px;        
+        margin-bottom: 10px;
+    }
+}
+.social{
+    clear: both;
+    height: 450px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2.5% 15%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+.socialheading{
+    font-size: 50px;
+    font-family: "Playfair Display", "Times New Roman", serif;
+    color: rgb(114, 110, 110);
+}
+.socialicons{
+     font-size: 35px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 25px;
+
+
+    
+     align-items: center;
+   
+
+}
+.awards{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;  
+    gap: 40px;
+    
+   
+    
+   
+}
+.socialrow{
+    display: flex;
+    align-items: center;      
+    gap: 70px;
+}
+.awards img{
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+@media screen and (max-width: 667px) {
+   
+
+    .social {
+        height: auto;           
+        padding: 40px 5%;       
+        text-align: center;
+    }
+
+    .socialheading {
+        font-size: 32px;        
+        margin-bottom: 20px;
+    }
+
+    .socialrow {
+        flex-direction: column; 
+        gap: 30px;              
+        align-items: center;
+    }
+
+    .socialicons {
+        justify-content: center; 
+        font-size: 28px;        
+        margin-bottom: 10px;
+    }
+
+    .awards {
+        flex-direction: row;    
+        flex-wrap: wrap;        
+        justify-content: center;
+        gap: 15px;            
+    }
+
+    .awards img {
+        height: 60px;          
+        width: auto;
+    }
+}
+.map-section {
+    clear: both;
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+    background-color: #fff;
+}
+
+.map-container {
+    width: 100%;
+    line-height: 0; 
+   
+}
+
+
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+.ptw{
+    clear: both;
+    float: left;
+    height: auto;width: 100%;
+    box-sizing: border-box;
+    padding: 2%  10% 0% 10%;
+}
+.ptwbox{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    
+}
+.info-card {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+   
+    
+}
+
+.info-card h3 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #676565;
+}
+.info-card ul {
+    
+    padding: 0;
+    text-align: left;
+}
+.info-card ul li {
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    color: #918f8f;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+}
+@media screen and (max-width: 667px) {
+    
+
+    .ptw {
+        padding: 40px 5%;   
+        height: auto;      
+    }
+
+    .ptwbox {
+        flex-direction: column; 
+        gap: 20px;             
+    }
+
+    .info-card {
+        width: 100%;           
+        box-sizing: border-box; 
+        padding: 20px;          
+    }
+
+    .info-card h3 {
+        font-size: 24px;      
+        margin-bottom: 15px;
+    }
+
+    .info-card ul li {
+        font-size: 16px;        
+    }
+}
+
+.footer_bottom_strip {
+    clear: both;
+    height: 50px;
+    width: 100%;
+    background-color: #333333; 
+    padding: 15px 0;
+    float: left;
+    border-top: 1px solid #444;
+}
+
+.bottom_content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom_content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px; 
+    color: #999999; 
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 667px) {
+    
+
+    .footer_bottom_strip {
+        height: auto;           
+        padding: 20px 0;        
+    }
+
+    .bottom_content {
+        flex-direction: column; 
+        gap: 15px;              
+        text-align: center;    
+    }
+
+    .bottom_content p {
+        font-size: 14px;        
+        width: 100%;            
+    }
+}
